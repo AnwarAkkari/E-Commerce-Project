@@ -5,3 +5,11 @@ a.username {
 b.tag {
   color: yellow;
 }
+
+.indexHead {
+	height: 100vh;
+	background-color: grey;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
