@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.validation.constraints.Positive;
 
-
 public class Cart {
 
 	private User user;
