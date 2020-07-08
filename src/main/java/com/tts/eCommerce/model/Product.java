@@ -13,12 +13,15 @@ import javax.validation.constraints.PositiveOrZero;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-@Entity //Let Spring Boot know that the instances of the Product class are stored in a database
-public class Product {
+@Entity //Let Spring Boot know that the instances of the Product class should be stored in a database
+		// (We need to keep track of all the products by saving them in an H2 database to distinguish between customer, manager, administrator etc.) 
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "product_id")
+public class Product {
+	
+	
+	@Id	// Use @Id annotation so it is recognized by JPA as "Product"’s primary key
+	@GeneratedValue(strategy = GenerationType.AUTO)	// The id property is also annotated with @GeneratedValue to indicate that the ID should be generated automatically
+	@Column(name = "product_id") // Specifies the mapped column for a persistent property ("Product") with its name in the H2 database being "product_id"
 	private Long id;
 
 
