@@ -13,7 +13,7 @@ import javax.validation.constraints.PositiveOrZero;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-@Entity
+@Entity //Let Spring Boot know that the instances of the Product class are stored in a database
 public class Product {
 
 	@Id
