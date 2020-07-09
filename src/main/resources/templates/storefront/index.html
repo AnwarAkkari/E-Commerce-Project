@@ -20,11 +20,11 @@
 		</div>
 		<h3>Products:</h3>
 		<div class="list-group">
-			<div th:each="product:${products}"> <!-- Update After ProductController finished  -->
+			<div th:each="product:${products}">
 				<a th:href="@{/products/} + ${product.id}"
 					class="list-group-item list-group-item-action"> <span
-					th:text="${article.title}"></span> By: <span
-					th:text="${article.author}"></span>
+					th:text="${product.name}"></span> Description: <span
+					th:text="${article.description}"></span>
 				</a>
 			</div>
 		</div>
