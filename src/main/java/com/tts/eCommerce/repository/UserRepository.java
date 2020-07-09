@@ -1,5 +1,8 @@
 package com.tts.eCommerce.repository;
 
-public interface UserRepository {
+import com.tts.eCommerce.model.User;
 
+public interface UserRepository {
+	
+	public User findByUsername(String username);
 }
