@@ -14,7 +14,7 @@
 		<form action="#" th:action="@{/products}" th:object="${product}"
 			method="post">
 			<table class="form-group">
-				<div th:replace="article/fragments/formFields"></div>
+				<div th:replace="fragments/productFields"></div>
 				<tr>
 					<td><button type="submit" class="btn btn-sm btn-warning">Submit</button></td>
 				</tr>
