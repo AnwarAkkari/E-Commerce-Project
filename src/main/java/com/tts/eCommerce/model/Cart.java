@@ -10,16 +10,16 @@ public class Cart {
 	private User user;
 	private String image;
 	private String date;
-	
+
 	@Positive(message = "Number of items bought cannot be zero or negative")
 	private List<HashMap<Product, Integer>> lineItems;
-	
+
 	private Double subTotal;
 	private Double total;
-	
-	private Cart() {}
 
-	private Cart(User user, String image, String date,
+	public Cart() {}
+
+	public Cart(User user, String image, String date,
 			@Positive(message = "Number of items bought cannot be zero or negative") List<HashMap<Product, Integer>> lineItems,
 			Double subTotal, Double total) {
 		this.user = user;
