@@ -21,11 +21,16 @@ public class OrderService {
 		return null;
 	}
 	
-	//method to calculate shipping and tax and calculate a total
-	private Double calcSalesTax(Double subTotal) {
-		//math for tax	
-		Double salesTax = 0.1 * subTotal;
+	//Method to calculate Order Sales Tax
+	private Double calculateSalesTax(Double subTotal) {
+		Double salesTax = 0.07 * subTotal;
 		return salesTax;
+	}
+	
+	//Method to calculate Order Total
+	private Double calculateTotal(Double subTotal, Double salesTax, Double shipping) {
+		Double total = subTotal + salesTax + shipping;
+		return total;
 	}
 
 

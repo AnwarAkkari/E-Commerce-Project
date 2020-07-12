@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Order_item")
-public class Order implements Serializable {
+public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -76,10 +76,6 @@ public class Order implements Serializable {
 	public String toString() {
 		return "Order [orderItemId=" + orderItemId + ", price=" + price + ", product=" + product + ", cart=" + cart
 				+ "]";
-	}
-
-	
-	
-	
+	}	
 
 }
