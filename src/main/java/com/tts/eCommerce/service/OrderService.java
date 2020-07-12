@@ -12,10 +12,9 @@ public class OrderService {
 	
 	@Autowired
 	private OrderRepository orderRepository;
-
 	
 	
-	public Order makePurchaseOrder(Cart cart) {
+	public static Order makePurchaseOrder(Cart cart) {
 		//Order thatObjectThatBecomesAnOrderFromACart.(whateverthefield) = new Order();
 		// code to populate fields to create an order object
 		//return thatObjectThatBecomesAnOrderFromACart;
