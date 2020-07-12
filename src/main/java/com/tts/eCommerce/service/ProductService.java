@@ -15,22 +15,23 @@ public class ProductService {
 	private ProductRepository productRepository;
 
 	public List<Product> findAll() {
-		    List<Product> products = productRepository.findAllByOrderByCreatedAtDesc();
+		List<Product> products = productRepository.findAll();
 		return products;
 	}
 
-	public Object findCategories() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> findCategories() {
+		List<Product> products = productRepository.findDistinctBrands();
+		return products;
 	}
 
-	public Object findBrands() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> findBrands() {
+		List<Product> products = productRepository.findDistinctCategories();
+		return products;
 	}
 
 	public List<Product> findByBrandAndOrCategory(String brand, String category) {
-		// TODO Auto-generated method stub
+
+
 		return null;
 	}
 
