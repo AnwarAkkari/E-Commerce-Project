@@ -11,7 +11,12 @@ import com.tts.eCommerce.model.User;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long>{
 
-	List<Product> findAllByOrderByCreatedAtDesc();
-	public List<Product> findAllByUserOrderByCreatedAtDesc(User user);
-	public List<Product> findAllByUserInOrderByCreatedAtDesc(List<User> users);
+	List<Product> findAll();
+	public List<Product> findbyId(Long id);
+	public List<Product> findbyName(String name);
+	public List<Product> findbyBrand(String brand);
+	public List<Product> findbyCategory(String category);
+	public List<Product> findbyBrandAndCategory(String brand, String category);
+
+	//@Query
 }

@@ -37,14 +37,17 @@ public class Product {
 	@NotBlank(message = "Product brand cannot be blank")
 	private String brand;
 	
+	@NotBlank(message = "Category cannot be blank")
+	private String category;
+	
 	@NotBlank(message = "Product description cannot be blank") // You cannot create a product without adding a brief description first.
 	private String description;
 
 	@PositiveOrZero(message = "Inventory numbers cannot be negative") // Inventory numbers cannot be zero
 	private Integer inventory;
 
-	private String image; // image attribute is a string representing the path where the image file is stored
-						// It is possible to create a product and add an image file path later?
+	private String image; // image attribute is a string representing the path where the image file is stored.
+						// It is possible to create a product and add an image file path later.
 
 	@CreationTimestamp
 	private Date createdAt;
@@ -52,12 +55,13 @@ public class Product {
 	@UpdateTimestamp
 	private Date updatedAt;
 
-	public Product() {}
+	private Product() {}
 
-	public Product(Long id, @NotBlank(message = "Product name cannot be blank") String name,
+	private Product(Long id, @NotBlank(message = "Product name cannot be blank") String name,
 			@PositiveOrZero(message = "Product wholesale price cannot be negative") Double wholesalePrice,
 			@PositiveOrZero(message = "Product retail price cannot be negative") Double retailPrice,
 			@NotBlank(message = "Product brand cannot be blank") String brand,
+			@NotBlank(message = "Category cannot be blank") String category,
 			@NotBlank(message = "Product description cannot be blank") String description,
 			@PositiveOrZero(message = "Inventory numbers cannot be negative") Integer inventory, String image,
 			Date createdAt, Date updatedAt) {
@@ -66,6 +70,7 @@ public class Product {
 		this.wholesalePrice = wholesalePrice;
 		this.retailPrice = retailPrice;
 		this.brand = brand;
+		this.category = category;
 		this.description = description;
 		this.inventory = inventory;
 		this.image = image;
@@ -103,6 +108,14 @@ public class Product {
 
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getDescription() {
@@ -152,9 +165,9 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", wholesalePrice=" + wholesalePrice + ", retailPrice="
-				+ retailPrice + ", brand=" + brand + ", description=" + description + ", inventory=" + inventory
-				+ ", image=" + image + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
+				+ retailPrice + ", brand=" + brand + ", category=" + category + ", description=" + description
+				+ ", inventory=" + inventory + ", image=" + image + ", createdAt=" + createdAt + ", updatedAt="
+				+ updatedAt + "]";
 	}
 
-	
 }
