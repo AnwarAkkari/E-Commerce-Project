@@ -22,7 +22,6 @@ public class OrderService {
 		return null;
 	}
 	
-	
 	//method to calculate shipping and tax and calculate a total
 	private Double calcSalesTax(Double subTotal) {
 		//math for tax	
