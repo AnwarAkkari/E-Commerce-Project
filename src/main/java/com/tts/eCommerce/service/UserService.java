@@ -1,7 +1,5 @@
 package com.tts.eCommerce.service;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.tts.eCommerce.model.Role;
 import com.tts.eCommerce.model.User;
 import com.tts.eCommerce.repository.RoleRepository;
 import com.tts.eCommerce.repository.UserRepository;
@@ -32,18 +29,32 @@ public class UserService {
 	  this.roleRepository = roleRepository;
 	  this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 	}
-
+	
+	public List<User> findAllUsers() {
+	  return (List<User>) userRepository.findAll();
+	
 	public User findByUsername(String username) {
-	  return userRepository.findByUsername(username);
+	  return (List<User>) userRepository.findByUsername(username);
 	}
 
-//	public List<User> findAllUsers() {
-//	  return (List<User>) userRepository.findAll();
+	
+	void deleteUser(User user) {
+		return null
+	}
+		
+	void addUser(User user);
+		
+	User getUserById(String userId);
+	
+	
+	
+	
+
 //	}
 
-//	public void save(User user) {
-//	  userRepository.save(user);
-//	}
+public void save(User user) {
+userRepository.save(user);
+}
 
 //	public User saveNewUser(User user) {
 //	  TODO user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -57,4 +68,8 @@ public class UserService {
 	  String loggedInUsername = SecurityContextHolder.getContext().getAuthentication().getName();
 	  return findByUsername(loggedInUsername);
 	}
+	
+	
+	}
+	
 }
