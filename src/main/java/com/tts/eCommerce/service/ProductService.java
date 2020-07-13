@@ -1,5 +1,6 @@
 package com.tts.eCommerce.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,19 +21,25 @@ public class ProductService {
 	}
 
 	public List<Product> findCategories() {
-		List<Product> products = productRepository.findDistinctBrands();
-		return products;
-	}
-
-	public List<Product> findBrands() {
 		List<Product> products = productRepository.findDistinctCategories();
 		return products;
 	}
 
+	public List<Product> findBrands() {
+		List<Product> products = productRepository.findDistinctBrands();
+		return products;
+	}
+
 	public List<Product> findByBrandAndOrCategory(String brand, String category) {
-
-
-		return null;
+		List<Product> products = new ArrayList<Product>();
+		if (brand == "") {
+			products = productRepository.findDistinctCategories();
+		}
+		if (category == "") {
+			products = productRepository.findDistinctBrands();
+		}
+		
+		return products;
 	}
 
 	
