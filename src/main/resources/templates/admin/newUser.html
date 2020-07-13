@@ -9,7 +9,18 @@
 <body>
   <div class="container-fluid">
     <div th:replace="fragments/navbar"></div>
-
+    
+    <p>Please use the form below to sign up:</p>
+    <form action="#" th:action="@{/users}" th:object="${user}"
+      method="post">
+      <table class="form-group">
+        <div th:replace="fragments/userFields"></div>
+        <tr>
+          <td><button type="submit" class="btn btn-sm btn-warning">Submit</button></td>
+        </tr>
+      </table>
+    </form>
+    
   </div>
   <script th:replace="fragments/scripts"></script>
 </body>

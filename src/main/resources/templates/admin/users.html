@@ -17,15 +17,14 @@
 						<h5>
 							<span th:text="${user.username}"></span>
 						</h5> <span class="text-left" style="color: #1da1f2;"> <span
-							th:text="${user.firstName}"></span> / <span
-							th:text="${user.lastName}"></span>
+							th:text="${user.name}"></span>
 					</span>
 					</a>
 				</div>
 			</div>
 		</div>
-		<div th:if="${#lists.isEmpty(products)}">
-			<h3>There are no products to show.</h3>
+		<div th:if="${#lists.isEmpty(users)}">
+			<h3>There are no users to show.</h3>
 		</div>
 	</div>
 	<script th:replace="fragments/scripts"></script>
