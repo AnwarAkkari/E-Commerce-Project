@@ -12,7 +12,7 @@ import com.tts.eCommerce.model.Product;
 public interface ProductRepository extends CrudRepository<Product, Long>{
 
 	List<Product> findAll();
-	public List<Product> findbyId(Long id);
+	public Product findbyId(Long id);
 	public List<Product> findbyName(String name);
 	public List<Product> findbyBrand(String brand);
 	public List<Product> findbyCategory(String category);

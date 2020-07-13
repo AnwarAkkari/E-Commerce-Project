@@ -31,6 +31,7 @@ public class ProductService {
 	}
 
 	public List<Product> findByBrandAndOrCategory(String brand, String category) {
+<<<<<<< HEAD
 		List<Product> products = new ArrayList<Product>();
 		if (brand == "") {
 			products = productRepository.findDistinctCategories();
@@ -40,8 +41,22 @@ public class ProductService {
 		}
 		
 		return products;
+=======
+
+		return null;
+>>>>>>> c86bf15009bad7136a5a0857f7a149077308fe8b
 	}
 
-	
-	
+	public Product findProductById(long id) {
+		Product product = productRepository.findbyId(id);
+		return product;
+	}
+
+	public void save(Product product) {
+		productRepository.save(product);
+	}
+
+	public void deleteById(long id) {
+		productRepository.deleteById(id);
+	}
 }
