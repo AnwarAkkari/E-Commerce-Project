@@ -31,20 +31,22 @@ public class ProductService {
 	}
 
 	public List<Product> findByBrandAndOrCategory(String brand, String category) {
-<<<<<<< HEAD
 		List<Product> products = new ArrayList<Product>();
 		if (brand == "") {
-			products = productRepository.findDistinctCategories();
+			List<Product> productset1 = productRepository.findDistinctCategories();
 		}
 		if (category == "") {
-			products = productRepository.findDistinctBrands();
+			List<Product> productset2 = productRepository.findDistinctBrands();
 		}
-		
-		return products;
-=======
+		List<String> columnsOld = DBUtils.GetColumns(db, TableName); 
+		List<String> columnsNew = DBUtils.GetColumns(db, TableName); 
 
-		return null;
->>>>>>> c86bf15009bad7136a5a0857f7a149077308fe8b
+		for(int i = columnsNew.size() - 1; i > -1; --i){
+		    String str = columnsNew.get(i);
+		    if(!columnsOld.remove(str))
+		        columnsNew.remove(str);
+		}		
+		return products;
 	}
 
 	public Product findProductById(long id) {
