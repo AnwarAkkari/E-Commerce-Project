@@ -31,10 +31,22 @@ public class ProductService {
 
 	public List<Product> findByBrandAndOrCategory(String brand, String category) {
 
-
 		return null;
 	}
 
+	public Product findProductById(long id) {
+		Product product = productRepository.findbyId(id);
+		return product;
+	}
+
+	public void save(Product product) {
+		productRepository.save(product);
+	}
+
+	public void deleteById(long id) {
+		productRepository.deleteById(id);
+	}
 	
 	
+
 }
